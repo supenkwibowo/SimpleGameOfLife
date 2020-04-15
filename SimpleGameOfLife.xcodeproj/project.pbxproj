@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		3076BCFB2446C0EA0061B309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076BCF92446C0EA0061B309 /* LaunchScreen.storyboard */; };
 		3076BD062446C0EA0061B309 /* SimpleGameOfLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076BD052446C0EA0061B309 /* SimpleGameOfLifeTests.swift */; };
 		3076BD112446C0EA0061B309 /* SimpleGameOfLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076BD102446C0EA0061B309 /* SimpleGameOfLifeUITests.swift */; };
+		3076BD1F2446C1050061B309 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076BD1E2446C1050061B309 /* World.swift */; };
+		3076BD222446D6340061B309 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3076BD212446D6340061B309 /* RxRelay */; };
+		3076BD242446D6340061B309 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3076BD232446D6340061B309 /* RxSwift */; };
+		3076BD262446D6340061B309 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3076BD252446D6340061B309 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,7 @@
 		3076BD0C2446C0EA0061B309 /* SimpleGameOfLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGameOfLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076BD102446C0EA0061B309 /* SimpleGameOfLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameOfLifeUITests.swift; sourceTree = "<group>"; };
 		3076BD122446C0EA0061B309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3076BD1E2446C1050061B309 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3076BD262446D6340061B309 /* RxCocoa in Frameworks */,
+				3076BD242446D6340061B309 /* RxSwift in Frameworks */,
+				3076BD222446D6340061B309 /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +114,7 @@
 				3076BCF72446C0EA0061B309 /* Assets.xcassets */,
 				3076BCF92446C0EA0061B309 /* LaunchScreen.storyboard */,
 				3076BCFC2446C0EA0061B309 /* Info.plist */,
+				3076BD1E2446C1050061B309 /* World.swift */,
 			);
 			path = SimpleGameOfLife;
 			sourceTree = "<group>";
@@ -144,6 +153,11 @@
 			dependencies = (
 			);
 			name = SimpleGameOfLife;
+			packageProductDependencies = (
+				3076BD212446D6340061B309 /* RxRelay */,
+				3076BD232446D6340061B309 /* RxSwift */,
+				3076BD252446D6340061B309 /* RxCocoa */,
+			);
 			productName = SimpleGameOfLife;
 			productReference = 3076BCEB2446C0E70061B309 /* SimpleGameOfLife.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +230,9 @@
 				Base,
 			);
 			mainGroup = 3076BCE22446C0E70061B309;
+			packageReferences = (
+				3076BD202446D6340061B309 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 3076BCEC2446C0E70061B309 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +278,7 @@
 			files = (
 				3076BCF32446C0E70061B309 /* ViewController.swift in Sources */,
 				3076BCEF2446C0E70061B309 /* AppDelegate.swift in Sources */,
+				3076BD1F2446C1050061B309 /* World.swift in Sources */,
 				3076BCF12446C0E70061B309 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +602,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3076BD202446D6340061B309 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3076BD212446D6340061B309 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3076BD202446D6340061B309 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		3076BD232446D6340061B309 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3076BD202446D6340061B309 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		3076BD252446D6340061B309 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3076BD202446D6340061B309 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3076BCE32446C0E70061B309 /* Project object */;
 }
